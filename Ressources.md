@@ -1,5 +1,5 @@
 ```
-   TO UPDATE AFTER REUNION - VENTILATION /USAGE - DIFFERENCES ENR QUARTIER / ENR RESEAU / PRODUCTION
+   TO UPDATE AFTER REUNION - VENTILATION /USAGE - ENR QUARTIER / RESEAU / PROD / CONSO
 ```
 
 Nous proposons de manipuler les ressources suivantes:
@@ -7,6 +7,12 @@ Nous proposons de manipuler les ressources suivantes:
 - [enrQuartierAnnee](#enrquartierannee)
 - [enrReseauMois](#enrreseaumois)
 - [enrReseauAnnee](#enrreseauannee)
+
+```
+   En fait, peit-être enrQuartierMois et enrReseauMois ne diffère que par une ou 2 clés ! Ne faudrait-il pas mieux alors faire 2 types de ressource suiviMois et suiviAnnee ?
+```
+
+
 
 ### enrQuartierMois
 `enrQuartierMois` décrit les infos liées aux taux d'ENR produits/utilisés par quartier pour un mois. Il est décrit comme suit:

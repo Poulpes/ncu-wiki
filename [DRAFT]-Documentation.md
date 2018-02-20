@@ -13,5 +13,3 @@ App de front réalisée en React.js à partir du boilerplate: [create-react-app]
 - Cloner le repo
 - Dans le terminal `$ npm install` puis `$ npm start`
 - L'app est accessible sur `http://localhost:3000/`
-
-## API Documentation

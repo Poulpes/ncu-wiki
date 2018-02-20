@@ -29,3 +29,4 @@ L'app prévoit uniquement une action de Login. La création d'utilisateurs, le r
 Ce token est stocké dans le hash de session du navigateur de l'utilisateur et ré-utilisé pour tous les autres calls de l'API.
 
 ### Call Authentifié
+En dehors du call de Login, tous les call à 

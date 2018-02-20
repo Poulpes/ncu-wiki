@@ -1,1 +1,0 @@
-Ce wiki constitue la documentation de l'API du projet NCU. Il décrit les endpoints utilisés par l'App de front.

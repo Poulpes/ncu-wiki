@@ -88,10 +88,10 @@ La déconnexion de l'utilisateur se traduit par une "simple" action front:
 
 ## Ressources
 Nous proposons de manipuler les ressources suivantes:
-- enrQuartierMois
-- enrQuartierAnnee
-- enrReseauMois
-- enrReseauAnnee
+- [enrQuartierMois](#enrquartiermois)
+- [enrQuartierAnnee](#enrquartierannee)
+- [enrReseauMois](#enrreseaumois)
+- [enrReseauAnnee](#enrreseauannee)
 
 ### enrQuartierMois
 `enrQuartierMois` décrit les infos liées aux taux d'ENR produits/utilisés par quartier pour un mois. Il est décrit comme suit:
@@ -135,17 +135,59 @@ Nous proposons de manipuler les ressources suivantes:
 ```
 {
   annee: 2015,
-  taux: {reel: 32, cible: 34},
-  ecarts: { meteo: 1, occupation: 0, performance: 1 },
-  tauxRT2012: { reel: 32, cible: 34 },
-  prod: { reel: 660, cible: 657 },
-  factureLogement: { reel: 42, cible: 45 },
-  factureCommerceM2: { reel: 13, cible: 15 },
-  factureBureauM2: { reel: 5, cible: 5 },
-  picElectrique: { value: 146, date: "2017-05-11T09:00:00.000Z"},
-  picThermique: { value: 266, date: "2017-05-11T09:00:00.000Z"},
-  tauxOccupation: '85-90%'    
+  taux: {reel: 32, cible: 34}, // Entiers compris entre [0..100]
+  ecarts: { meteo: 1, occupation: 0, performance: 1 }, // Entiers relatifs
+  tauxRT2012: { reel: 32, cible: 34 }, // Entiers compris entre [0..100]
+  prod: { reel: null, cible: null }, // Entiers positifs
+  factureLogement: { reel: 42, cible: 45 }, // Entiers positifs
+  factureCommerceM2: { reel: 13, cible: 15 }, // Entiers positifs
+  factureBureauM2: { reel: 5, cible: null }, // Entiers positifs
+  picElectrique: { value: 146, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  picThermique: { value: 266, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  tauxOccupation: '85-90%' // String
 }
 ```
 
 **La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrquartiermois)).
+
+### enrReseauMois
+`enrReseauMois` décrit les infos liées aux taux d'ENR produits/utilisés par réseau de chaleur pour un mois. **Nous avons supposé, qu'il pouvait se décrire comme `enrQuartierMois`**:
+```
+{
+  annee: 2017, // Integer
+  mois: 1, // Integer, mois indexé à partir de 1
+  taux: {reel: 32, cible: 34}, // Entiers compris entre [0..100]
+  ecarts: { meteo: 1, occupation: 0, performance: 1 }, // Entiers relatifs
+  tauxRT2012: { reel: 32, cible: 34 }, // Entiers compris entre [0..100]
+  prod: { reel: 660, cible: 657 }, // Entiers positifs
+  factureLogement: { reel: 42, cible: 45 }, // Entiers positifs
+  factureCommerceM2: { reel: 13, cible: 15 }, // Entiers positifs
+  factureBureauM2: { reel: 5, cible: 5 }, // Entiers positifs
+  picElectrique: { value: 146, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  picThermique: { value: 266, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  tauxOccupation: '85-90%' // String
+}
+```
+
+**La data incomplète est présentée sous forme `null` et non pas comme une absence de data**.. (cf. [enrQuartierMois](#enrquartiermois)).
+
+### enrReseauAnnee
+`enrReseauAnnee` décrit les infos liées aux taux d'ENR produits/utilisés par réseau de chaleur pour une année. Il est décrit comme suit:
+```
+{
+  annee: 2015,
+  taux: {reel: 32, cible: 34}, // Entiers compris entre [0..100]
+  ecarts: { meteo: 1, occupation: 0, performance: 1 }, // Entiers relatifs
+  tauxRT2012: { reel: 32, cible: 34 }, // Entiers compris entre [0..100]
+  prod: { reel: null, cible: null }, // Entiers positifs
+  factureLogement: { reel: 42, cible: 45 }, // Entiers positifs
+  factureCommerceM2: { reel: 13, cible: 15 }, // Entiers positifs
+  factureBureauM2: { reel: 5, cible: null }, // Entiers positifs
+  picElectrique: { value: 146, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  picThermique: { value: 266, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  tauxOccupation: '85-90%' // String
+}
+```
+
+**La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrquartiermois)).
+

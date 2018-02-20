@@ -18,4 +18,4 @@ Avec:
 - `endpoint?params`: Les endpoints sont décrits ci-dessous et sont regroupés dans le fichier `ApiService.js`.
 
 L'`url-de-base` pourra facilement être modifié lors de la mise en production.
-L'usage du numéro de version dans les call permettra de faire évoluer l'API sans bloquer les calls de l'App de FRont.
+L'usage du numéro de version `vX` dans les call permettra de faire évoluer l'API sans bloquer les calls de l'App de FRont.

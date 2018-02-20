@@ -1,8 +1,11 @@
 ## TOC
+- [Notes](#notes)**A traiter / discuter**
 - [URL de base et version](#url-de-base-et-version)
 - [Format](#format)
 - [Authentification](#authentification)
 - Endpoints
+
+## Notes
 
 ## URL de base et version
 Tous les calls sont réalisés sous la forme:

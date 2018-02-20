@@ -112,3 +112,45 @@ Nous proposons de manipuler les ressources suivantes:
 
 **La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrquartiermois)).
 
+### suiviMois
+`suiviMois` décrit les infos de suivi Mois par mois en termes d'ENR par quartier, ENR par réseau de chaleur, de production d'énergie et de consommation d'énergie:
+```
+{
+  annee: 2017, // Integer
+  mois: 4, // Integer, mois indexé à partir de 1
+  objectif: 70, // Integer [0..100]
+  enrQuartier: {
+    taux: {reel: 32, cible: 34}, // Entiers compris entre [0..100],
+    rt2012: {reel: 32, cible: 34}, // Entiers compris entre [0..100] même chose que le taux ?,
+    prod: { reel: 660, cible: 657 }, // Entiers positifs
+    ecarts: { meteo: 1, occupation: 0, performance: 1 } // Entiers relatifs
+  },
+  enrReseau: {
+    taux: {reel: 32, cible: 34}, // Entiers compris entre [0..100],
+    rt2012: {reel: 32, cible: 34}, // Entiers compris entre [0..100] même chose que le taux ?,
+    prod: { reel: 660, cible: 657 }, // Entiers positifs
+    ecarts: { meteo: 1, occupation: 0, performance: 1 } // Entiers relatifs
+  },
+  conso: {
+    toutUsage: {reel: 239, cible: 1367}, // Entiers positifs
+    parUsage: {
+      eclairage: {reel: 239, cible: 1367}, // Entiers positifs
+      auxiliaire: {reel: 139, cible: 1357}, // Entiers positifs
+      eauChaude: {reel: 139, cible: 1357}, // Entiers positifs
+      chauffage: {reel: 139, cible: 1357}, // Entiers positifs
+      refroidissement: {reel: 139, cible: 1357}, // Entiers positifs
+      usage_spec: {reel: 139, cible: 1357} // Entiers positifs
+    }
+  },
+  prod: { reel: 660, cible: 657 }, //Entiers positifs
+  factureLogement: { reel: 42, cible: 45 }, // Entiers positifs
+  factureCommerceM2: { reel: 13, cible: 15 }, // Entiers positifs
+  factureBureauM2: { reel: 5, cible: 5 }, // Entiers positifs
+  picElectrique: { value: 146, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  picThermique: { value: 266, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  tauxOccupation: '85-90%', // String
+}
+```
+
+**La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrquartiermois)).
+

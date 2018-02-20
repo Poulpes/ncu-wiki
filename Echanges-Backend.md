@@ -1,12 +1,8 @@
 ## TOC
-- [Notes](#notes)
 - [URL de base et version](#url-de-base-et-version)
+- [Format](#format)
 - [Authentification](#authentification)
 - Endpoints
-
-## Notes
-On appelle:
-- Backend: le serveur Embix avec l'app backend dédiée au projet NCU. Ce backend est interrogé par l'App de Front
 
 ## URL de base et version
 Tous les calls sont réalisés sous la forme:
@@ -15,10 +11,13 @@ Tous les calls sont réalisés sous la forme:
 base_url/endpoint?params
 ```
 Avec:
-- `base_url`: Composée d'une racine `root_url` et d'un numéro de version de l'API `vX`, sous la forme `root_url/vX`. Ces éléments sont paramétrables dans l'app dans le fichier `ApiService.js`.
-- `endpoint?params`: Les endpoints sont décrits ci-dessous et sont regroupés dans le fichier `ApiService.js`.
+- `base_url`: Composée d'une racine `root_url` et d'un numéro de version du backend `vX`, sous la forme `root_url/vX`. Ces éléments sont paramétrables dans l'app dans le fichier `backendService.js`.
+- `endpoint?params`: Les endpoints sont décrits ci-dessous et sont regroupés dans le fichier `backendService.js`.
 
-Les paramètres de la `base_url` (`root_url` et `vX`) pourront facilement être modifiés lors de la mise en production et des évolutions de l'API.
+Les paramètres de la `base_url` (`root_url` et `vX`) pourront facilement être modifiés lors de la mise en production et des évolutions du backend.
+
+## Format
+Les calls sont réalisés en Ajax et attendent des réponses de `Content-type` `application/json`.
 
 ## Authentification
 ### Login
@@ -28,7 +27,20 @@ L'app prévoit uniquement une action de Login. La création d'utilisateurs, le r
 - L'app de front post une requête `base_url/auth/login` avec `email` et `password` en corps de requête
 - En cas d'échec, le serveur répond avec une erreur (cf. )
 - En cas de success, le serveur répond avec la ressource `User` et un `token`
-Ce token est stocké dans le hash de session du navigateur de l'utilisateur et ré-utilisé pour tous les autres calls de l'API.
+Ce token est stocké dans le hash de session du navigateur de l'utilisateur et ré-utilisé pour tous les autres calls au Backend.
 
-### Call Authentifié
-En dehors du call de Login, tous les call à 
+### Calls Authentifiés
+En dehors du call de Login, tous les call au Backend NCU doivent être authentifiés. Pour cela, tous les calls intégreront le token en header de la requête.
+
+**Request Headers**
+```
+{
+  'Authorization': 'Bearer $token'
+}
+```
+Par exemple:
+```
+{
+  'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9'
+}
+```

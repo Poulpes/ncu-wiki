@@ -5,6 +5,8 @@
 - Endpoints
 
 ## Notes
+On appelle:
+- Backend: le serveur Embix avec l'app backend dédiée au projet NCU. Ce backend est interrogé par l'App de Front
 
 ## URL de base et version
 Tous les calls sont réalisés sous la forme:

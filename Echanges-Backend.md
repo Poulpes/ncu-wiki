@@ -129,3 +129,23 @@ Nous proposons de manipuler les ressources suivantes:
   tauxOccupation: '85-90%' // String
 }
 ```
+
+### enrQuartierAnnee
+`enrQuartierAnnee` décrit les infos liées aux taux d'ENR produits/utilisés par quartier pour une annee. Il est décrit comme suit:
+```
+{
+  annee: 2015,
+  taux: {reel: 32, cible: 34},
+  ecarts: { meteo: 1, occupation: 0, performance: 1 },
+  tauxRT2012: { reel: 32, cible: 34 },
+  prod: { reel: 660, cible: 657 },
+  factureLogement: { reel: 42, cible: 45 },
+  factureCommerceM2: { reel: 13, cible: 15 },
+  factureBureauM2: { reel: 5, cible: 5 },
+  picElectrique: { value: 146, date: "2017-05-11T09:00:00.000Z"},
+  picThermique: { value: 266, date: "2017-05-11T09:00:00.000Z"},
+  tauxOccupation: '85-90%'    
+}
+```
+
+**La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrQuartierMois)).

@@ -9,7 +9,8 @@ Nous proposons de manipuler les ressources suivantes:
 - [enrReseauAnnee](#enrreseauannee)
 
 ```
-   En fait, peit-être enrQuartierMois et enrReseauMois ne diffère que par une ou 2 clés ! Ne faudrait-il pas mieux alors faire 2 types de ressource suiviMois et suiviAnnee ?
+   En fait, peut-être enrQuartierMois et enrReseauMois ne diffère que par une ou 2 clés !
+   Ne faudrait-il pas mieux alors faire 2 types de ressource suiviMois et suiviAnnee ?
 ```
 
 

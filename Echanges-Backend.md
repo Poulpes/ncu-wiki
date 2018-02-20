@@ -50,6 +50,8 @@ Les paramètres de la `base_url` (`root_url` et `vX`) pourront facilement être 
 - Les données énergie sont toutes exprimées en kWH
 - Les données de prix sont toutes exprimées en €
 
+Les absences de données, les erreurs pour certains point de mesures ou pour certains attributs sont affichés `null`. Autrement dit, si le backend ne dispose pas de data ou que la data est incomplète, il répond avec les ressources demandées mises à `null`. 
+
 ## Authentification
 ### Login
 L'app prévoit uniquement une action de Login. La création d'utilisateurs, le recouvrement de mot de passe, etc. se fait en back office Embix. Le schéma d'authentification se fait de la façon suivante:
@@ -108,3 +110,22 @@ Nous proposons de manipuler les ressources suivantes:
   picThermique: { value: 266, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
   tauxOccupation: '85-90%' // String
 }
+```
+
+**La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. Par exemple, si le backend ne dispose pas de data ou pas de data valable pour les données de productions et pas de donnes cibles pour les facture bureau au m2, la réponse sera comme suit:
+```
+{
+  annee: 2017, // Integer
+  mois: 1, // Integer, mois indexé à partir de 1
+  taux: {reel: 32, cible: 34}, // Entiers compris entre [0..100]
+  ecarts: { meteo: 1, occupation: 0, performance: 1 }, // Entiers relatifs
+  tauxRT2012: { reel: 32, cible: 34 }, // Entiers compris entre [0..100]
+  prod: { reel: null, cible: null }, // Entiers positifs
+  factureLogement: { reel: 42, cible: 45 }, // Entiers positifs
+  factureCommerceM2: { reel: 13, cible: 15 }, // Entiers positifs
+  factureBureauM2: { reel: 5, cible: null }, // Entiers positifs
+  picElectrique: { value: 146, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  picThermique: { value: 266, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  tauxOccupation: '85-90%' // String
+}
+```

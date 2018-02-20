@@ -25,7 +25,7 @@ Option 1
 > Ces dates proviennent du backend et correspondent à des bornes de calcul des indicateurs et donc pas forcément à "Début calendaire de la période" et "Date d'aujourd'hui" ou "Mois en cours". Le frontend récupère ces dates.
 
 Option 2
-> Nous considérons qu'il s'agit toujours d'afficher une période en cours du "début calendaire de la Periode" à la date d'aujourd'hui ou au mois en cours.
+> Nous considérons qu'il s'agit toujours d'afficher une période en cours du "début calendaire de la Periode" à la "date d'aujourd'hui" ou au "mois en cours".
 
 **Pour le moment, nous partons du principe que l'option 2 est retenue.**
 

@@ -44,3 +44,4 @@ Par exemple:
   'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9'
 }
 ```
+Ce `token` permettra au backend NCU de réaliser les opérations nécessaires pour récupérer la Data en DB, sur l'API Urban Power, etc. Si le token envoyé n'est pas valable (token non valide, token expiré, etc.), le backend NCU répondra une erreur 401 Unauthorized.

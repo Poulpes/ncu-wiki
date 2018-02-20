@@ -148,4 +148,4 @@ Nous proposons de manipuler les ressources suivantes:
 }
 ```
 
-**La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrQuartierMois)).
+**La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrquartiermois)).

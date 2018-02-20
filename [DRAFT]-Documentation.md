@@ -1,3 +1,8 @@
+```
+********** DRAFT VERSION **********
+```
+
+
 Ce wiki constitue la documentation du projet NCU dans le contexte suivant:
 - le Frontend correspond à ce repository. Il s'agit de l'app de front développée par _Poulpes_ qui rend compte des dashboards de visualisation des consommations/productions énergétiques sur le project Nanterre Coeur Université (NCU).
 - le Backend correspond à l'application /module back-end développée par Embix pour le projet NCU et qui répond aux calls du Frontend.

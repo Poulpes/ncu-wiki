@@ -1,11 +1,34 @@
 ## TOC
-- [Notes](#notes)**A traiter / discuter**
+- [Notes](#notes) **(A traiter / discuter)**
 - [URL de base et version](#url-de-base-et-version)
-- [Format](#format)
+- [Formats](#formats)
 - [Authentification](#authentification)
 - Endpoints
 
 ## Notes
+### Remarques sur les graphiques, les onglets manquants
+Cf. document de remarques.
+### Language du code
+Le code Frontend sera en anglais. Doit-on prévoir les call en anglais ? peu importe ?
+### Gestion des périodes en cours
+2 options sont possibles pour afficher les infos de dates des "périodes en cours". Par exemple:
+```
+Février 2018
+01 - 20 février 2018
+-------
+
+Année 2018
+Janvier - Février 2018
+```
+
+Option 1
+> Ces dates proviennent du backend et correspondent à des bornes de calcul des indicateurs et donc pas forcément à "Début calendaire de la période" et "Date d'aujourd'hui" ou "Mois en cours". Le frontend récupère ces dates.
+
+Option 2
+> Nous considérons qu'il s'agit toujours d'afficher une période en cours du "début calendaire de la Periode" à la date d'aujourd'hui ou au mois en cours.
+
+**Pour le moment, nous partons du principe que l'option 2 est retenue.**
+
 
 ## URL de base et version
 Tous les calls sont réalisés sous la forme:
@@ -19,8 +42,12 @@ Avec:
 
 Les paramètres de la `base_url` (`root_url` et `vX`) pourront facilement être modifiés lors de la mise en production et des évolutions du backend.
 
-## Format
-Les calls sont réalisés en Ajax et attendent des réponses de `Content-type` `application/json`.
+## Formats
+- Les calls sont réalisés en Ajax et attendent des réponses de `Content-type` `application/json`.
+- Les dates sont manipulées au format ISO8601 (2013-09-01T22:04:28.000Z)
+- Les numéros de moss renvoyés par le backend sont indexés à partir de 1
+- Les données énergie sont toutes exprimées en kWH
+- Les données de prix sont toutes exprimées en €
 
 ## Authentification
 ### Login

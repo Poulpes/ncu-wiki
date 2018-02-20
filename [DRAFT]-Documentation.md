@@ -1,7 +1,8 @@
 Ce wiki constitue la documentation du projet NCU. Il reprend les éléments suivants:
 - [Stack Technique](#stack-technique)
 - [Getting Started](#getting-started)
-- [API Documentation](API-documentation)
+- [Backend](Backend): Documentation des échanges entre l'App de front et le Backend NCU.
+
 
 ## Stack Technique
 App de front réalisée en React.js à partir du boilerplate: [create-react-app](https://github.com/facebook/create-react-app). Principales librairies utilisées:

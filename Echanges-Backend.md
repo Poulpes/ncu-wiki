@@ -97,14 +97,14 @@ Nous proposons de manipuler les ressources suivantes:
 {
   annee: 2017, // Integer
   mois: 1, // Integer, mois indexé à partir de 1
-  taux: {reel: 32, cible: 34}, // Entiers comprise entre [0 ..100]
-  ecarts: { meteo: 1, occupation: 0, performance: 1 },
-  tauxRT2012: { reel: 32, cible: 34 },
-  prod: { reel: 660, cible: 657 },
-  factureLogement: { reel: 42, cible: 45 },
-  factureCommerceM2: { reel: 13, cible: 15 },
-  factureBureauM2: { reel: 5, cible: 5 },
-  picElectrique: { value: 146, date: "2017-05-11T09:00:00.000Z"},
-  picThermique: { value: 266, date: "2017-05-11T09:00:00.000Z"},
-  tauxOccupation: '85-90%'
+  taux: {reel: 32, cible: 34}, // Entiers compris entre [0..100]
+  ecarts: { meteo: 1, occupation: 0, performance: 1 }, // Entiers relatifs
+  tauxRT2012: { reel: 32, cible: 34 }, // Entiers compris entre [0..100]
+  prod: { reel: 660, cible: 657 }, // Entiers positifs
+  factureLogement: { reel: 42, cible: 45 }, // Entiers positifs
+  factureCommerceM2: { reel: 13, cible: 15 }, // Entiers positifs
+  factureBureauM2: { reel: 5, cible: 5 }, // Entiers positifs
+  picElectrique: { value: 146, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  picThermique: { value: 266, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  tauxOccupation: '85-90%' // String
 }

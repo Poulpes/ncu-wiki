@@ -10,7 +10,7 @@ App de front réalisée en React.js à partir du boilerplate: [create-react-app]
 - Call Ajax: [Axios](https://github.com/axios/axios)
 
 ## Getting Started
-- Cloner le repo
-- Dans le terminal `npm install` et `npm start`
+1 - Cloner le repo
+2 - Dans le terminal `npm install` puis `npm start`
 
 ## API Documentation

@@ -9,6 +9,8 @@ Nous proposons de manipuler les ressources suivantes:
 - [enrReseauAnnee](#enrreseauannee)
 - [suiviMois](#suiviMois)
 - [suiviAnnee](#suiviAnnee)
+- [consoMois](#consoMois)
+- [consoAnnee](#consoAnnee)
 
 **En fait, peut-être enrQuartierMois et enrReseauMois ne diffère que par une ou 2 clés ! Ne faudrait-il pas mieux alors faire 2 types de ressource `suiviMois` et `suiviAnnee` ?**
 
@@ -198,3 +200,51 @@ Nous proposons de manipuler les ressources suivantes:
 
 **La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrquartiermois)).
 
+### consoMois
+`consoMois` décrit les infos de consommation par lot et par usage. En fait non, il faudrait mettre en clé principale les lots ! Et ventilés par usage 'en dessous'
+```
+{
+  annee: 2017, // Integer
+  mois: 4, // Integer, mois indexé à partir de 1
+  conso: {
+    toutUsage: {
+      toutLot: {reel: 239, cible: 1367, reel_n_1: 22},
+      parLot: [
+       {label: '3 log', reel: 23, cible: 34, ecart: {meteo: 12, occupation: 5, performance: 6}},
+       {label: '3 Com', reel: 23, cible: 34, ecart: {meteo: 12, occupation: 5, performance: 6}},
+       {label: '4 Bur', reel: 23, cible: 34, ecart: {meteo: 12, occupation: 5, performance: 6}},
+       etc
+      ]
+    },
+    parUsage: {
+      eclairage: {
+        toutLot: {reel: 239, cible: 1367, reel_n_1: 22},
+        parLot: [
+         {label: '3 log', reel: 23, cible: 34, ecart: {meteo: 12, occupation: 5, performance: 6}},
+         {label: '3 Com', reel: 23, cible: 34, ecart: {meteo: 12, occupation: 5, performance: 6}},
+         {label: '4 Bur', reel: 23, cible: 34, ecart: {meteo: 12, occupation: 5, performance: 6}},
+         etc
+        ]
+      },
+      eclairage: {
+        toutLot: {reel: 239, cible: 1367, reel_n_1: 22},
+        parLot: [
+         {label: '3 log', reel: 23, cible: 34, ecart: {meteo: 12, occupation: 5, performance: 6}},
+         {label: '3 Com', reel: 23, cible: 34, ecart: {meteo: 12, occupation: 5, performance: 6}},
+         {label: '4 Bur', reel: 23, cible: 34, ecart: {meteo: 12, occupation: 5, performance: 6}},
+         etc
+        ]
+      },
+    }
+  },
+  prod: { reel: 660, cible: 657 }, //Entiers positifs
+  factureLogement: { reel: 42, cible: 45 }, // Entiers positifs
+  factureCommerceM2: { reel: 13, cible: 15 }, // Entiers positifs
+  factureBureauM2: { reel: 5, cible: 5 }, // Entiers positifs
+  picElectrique: { value: 146, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  picThermique: { value: 266, date: "2017-05-11T09:00:00.000Z"},// Entier positif et DateTime
+  tauxOccupation: '85-90%', // String
+}
+```
+
+**La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrquartiermois)).

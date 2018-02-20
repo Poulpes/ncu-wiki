@@ -27,7 +27,8 @@ L'app prévoit uniquement une action de Login. La création d'utilisateurs, le r
 - L'app de front post une requête `base_url/auth/login` avec `email` et `password` en corps de requête
 - En cas d'échec, le serveur répond avec une erreur (cf. )
 - En cas de success, le serveur répond avec la ressource `User` et un `token`
-Ce token est stocké dans le hash de session du navigateur de l'utilisateur et ré-utilisé pour tous les autres calls au Backend.
+
+Ce token est stocké dans le `localStorage` du navigateur de l'utilisateur et ré-utilisé pour tous les autres calls au Backend.
 
 ### Calls Authentifiés
 En dehors du call de Login, tous les call au Backend NCU doivent être authentifiés. Pour cela, tous les calls intégreront le token en header de la requête.
@@ -45,3 +46,8 @@ Par exemple:
 }
 ```
 Ce `token` permettra au backend NCU de réaliser les opérations nécessaires pour récupérer la Data en DB, sur l'API Urban Power, etc. Si le token envoyé n'est pas valable (token non valide, token expiré, etc.), le backend NCU répondra une erreur 401 Unauthorized.
+
+### Logout
+La déconnexion de l'utilisateur se traduit par une "simple" action front:
+- suppression du token sauvé dans le localStorage du navigateur
+- redirection de l'utilisateur vers le composant de Login

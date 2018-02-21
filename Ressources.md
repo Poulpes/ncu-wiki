@@ -3,6 +3,7 @@
 ```
 
 Nous proposons de manipuler les ressources suivantes:
+
 - [enrQuartierMois](#enrquartiermois)
 - [enrQuartierAnnee](#enrquartierannee)
 - [enrReseauMois](#enrreseaumois)
@@ -12,11 +13,13 @@ Nous proposons de manipuler les ressources suivantes:
 - [consoMois](#consoMois)
 - [consoAnnee](#consoAnnee)
 
+
 **En fait, peut-être enrQuartierMois et enrReseauMois ne diffère que par une ou 2 clés ! Ne faudrait-il pas mieux alors faire 2 types de ressource `suiviMois` et `suiviAnnee` ?**
 
 
 
 ### enrQuartierMois
+
 `enrQuartierMois` décrit les infos liées aux taux d'ENR produits/utilisés par quartier pour un mois. Il est décrit comme suit:
 ```
 {
@@ -54,6 +57,7 @@ Nous proposons de manipuler les ressources suivantes:
 ```
 
 ### enrQuartierAnnee
+
 `enrQuartierAnnee` décrit les infos liées aux taux d'ENR produits/utilisés par quartier pour une annee. Il est décrit comme suit:
 ```
 {
@@ -74,6 +78,7 @@ Nous proposons de manipuler les ressources suivantes:
 **La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrquartiermois)).
 
 ### enrReseauMois
+
 `enrReseauMois` décrit les infos liées aux taux d'ENR produits/utilisés par réseau de chaleur pour un mois. **Nous avons supposé, qu'il pouvait se décrire comme `enrQuartierMois`**:
 ```
 {
@@ -95,6 +100,7 @@ Nous proposons de manipuler les ressources suivantes:
 **La data incomplète est présentée sous forme `null` et non pas comme une absence de data**.. (cf. [enrQuartierMois](#enrquartiermois)).
 
 ### enrReseauAnnee
+
 `enrReseauAnnee` décrit les infos liées aux taux d'ENR produits/utilisés par réseau de chaleur pour une année. Il est décrit comme suit:
 ```
 {
@@ -115,6 +121,7 @@ Nous proposons de manipuler les ressources suivantes:
 **La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrquartiermois)).
 
 ### suiviMois
+
 `suiviMois` décrit les infos de suivi par mois en termes d'ENR par quartier, ENR par réseau de chaleur, de production d'énergie et de consommation d'énergie:
 ```
 {
@@ -157,6 +164,7 @@ Nous proposons de manipuler les ressources suivantes:
 **La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrquartiermois)).
 
 ### suiviAnnee
+
 `suiviAnnee` décrit les infos de suivi par année en termes d'ENR par quartier, ENR par réseau de chaleur, de production d'énergie et de consommation d'énergie:
 ```
 {
@@ -201,6 +209,7 @@ Nous proposons de manipuler les ressources suivantes:
 **La data incomplète est présentée sous forme `null` et non pas comme une absence de data**. (cf. [enrQuartierMois](#enrquartiermois)).
 
 ### consoMois
+
 `consoMois` décrit les infos de consommation par lot et par usage. En fait non, il faudrait mettre en clé principale les lots ! Et ventilés par usage 'en dessous'
 ```
 {
